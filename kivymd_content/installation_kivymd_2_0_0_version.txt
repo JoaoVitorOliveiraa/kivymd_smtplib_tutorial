@@ -1,0 +1,2 @@
+Instalação da versão 2.0.0 do KivyMD
+pip install https://github.com/kivymd/KivyMD/archive/master.zip
