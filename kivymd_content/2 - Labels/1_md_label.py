@@ -34,14 +34,14 @@ MyApp().run()
 
 
 
-#                               ----- DESCRIÇÃO DA FUNÇÃO MDFLATLABEL -----
+#                               ----- DESCRIÇÃO DA FUNÇÃO MDLabel -----
 
-# A função MDFlatLabel no KivyMD é um widget que representa um rótulo de texto simples em uma interface gráfica,
+# A função MDLabel no KivyMD é um widget que representa um rótulo de texto simples em uma interface gráfica,
 # seguindo o estilo do Material Design. Ela permite personalizar o texto exibido e possui alguns parâmetros e
 # propriedades que oferecem flexibilidade na apresentação visual, sendo geralmente usada para exibir
 # informações de forma clara e legível.
 
-# Abaixo, estão os parâmetros e propriedades mais importantes do MDFlatLabel:
+# Abaixo, estão os parâmetros e propriedades mais importantes do MDLabel:
 
 # 1. text
 # Descrição: Define o texto que será exibido no rótulo.
@@ -75,23 +75,3 @@ MyApp().run()
 # Tipo: str
 # Opções: "top", "center", "bottom"
 # Exemplo: valign="center"
-
-# 7. line_height
-# Descrição: Define o espaçamento entre as linhas de texto.
-# Tipo: float
-# Padrão: 1.5
-# Exemplo: line_height=1.2
-
-# 9. markup
-# Descrição: Habilita ou desabilita a utilização de marcações no texto, como tags de cor e formatação de fonte.
-# Tipo: bool
-# Padrão: False
-# Exemplo: markup=True
-
-
-# Funcionalidade Geral:
-
-# O MDFlatLabel é usado para exibir texto estilizado, respeitando as diretrizes do Material Design, em aplicações
-# feitas com KivyMD. Ele permite uma apresentação clara e flexível de texto, que pode ser usado em botões, títulos,
-# subtítulos, entre outros. As opções de personalização de alinhamento, estilo de fonte, cor e tamanho tornam o
-# MDFlatLabel uma escolha útil para aplicações que buscam uma interface visual moderna e acessível.
