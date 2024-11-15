@@ -11,6 +11,7 @@ MDScreen:
         md_bg_color: (1, 0, 0, 1)
         size_hint: None, None
         pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        fab_state: "expand"
 
         MDExtendedFabButtonIcon:
             icon: "pencil-outline"
@@ -30,3 +31,36 @@ class MyApp(MDApp):
         return screen
 
 MyApp().run()
+
+
+# from kivy.lang import Builder
+#
+# from kivymd.app import MDApp
+#
+# KV = '''
+# MDScreen:
+#     md_bg_color: app.theme_cls.surfaceColor
+#     on_touch_down:
+#         if not btn.collide_point(*args[1].pos): \
+#         btn.fab_state = "expand" \
+#         if btn.fab_state == "collapse" else "collapse"
+#
+#         MDExtendedFabButton:
+#             id: btn
+#             pos_hint: {"center_x": .5, "center_y": .5}
+#
+#             MDExtendedFabButtonIcon:
+#                 icon: "pencil-outline"
+#
+#             MDExtendedFabButtonText:
+#                 text: "Compose"
+# '''
+#
+#
+# class Example(MDApp):
+#     def build(self):
+#         self.theme_cls.primary_palette = "Green"
+#         return Builder.load_string(KV)
+#
+#
+# Example().run()
