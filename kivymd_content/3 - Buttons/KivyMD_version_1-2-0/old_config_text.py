@@ -1,0 +1,90 @@
+# ----- TIPOS DE FONTE DE TEXTO DA FUNÇÃO MDLABEL -----
+
+H1 = "H1"
+H2 = "H2"
+H3 = "H3"
+H4 = "H4"
+H5 = "H5"
+H6 = "H6"
+SUBTITLE1 = "Subtitle1"
+SUBTITLE2 = "Subtitle2"
+BODY1 = "Body1"
+BODY2 = "Body2"
+BUTTON = "Button"
+CAPTION = "Caption"
+OVERLINE = "Overline"
+ICON = "Icon"
+
+
+# ----- TIPOS DE COR DE TEXTO DA FUNÇÃO MDLABEL -----
+
+PRIMARY = "Primary"
+SECONDARY = "Secondary"
+HINT = "Hint"
+ERROR = "Error"
+CONSTRATPB = "ContrastParentBackground"
+CUSTOM = "Custom"
+
+
+# ----- CORES DO MANUAL DA MARCA DA FOR_CODE (NO FORMATO RGBA) -----
+
+BRANCO = (1, 1, 1, 1)
+AMARELO = (1, 1, 0, 1)
+ROXO_CLARO = (97/255, 74/255, 211/255, 1)
+ROXO_ESCURO = (30/255, 22/255, 71/255, 1)
+
+
+# ----- CORES DIVERSAS -----
+
+PRETO = (0, 0, 0, 1)
+AZUL = (0, 0, 1, 1)
+VERDE = (0, 1, 0, 1)
+VERMELHO = (1, 0, 0, 1)
+MARROM = (102/255, 51/255, 0, 1)
+
+
+# ----- CORES DA PRIMARY_PALETTE -----
+
+PALETA_VERMELHO = "Red"
+PALETA_ROSA = "Pink"
+PALETA_ROXO = "Purple"
+PALETA_ROXO_ESCURO = "DeepPurple"
+PALETA_INDIGO = "Indigo"
+PALETA_AZUL = "Blue"
+PALETA_AZUL_CLARO = "LightBlue"
+PALETA_CIANO = "Cyan"
+PALETA_AZUL_PETROLEO = "Teal"
+PALETA_VERDE = "Green"
+PALETA_VERDE_CLARO = "LightGreen"
+PALETA_VERDE_LIMA = "Lime"
+PALETA_AMARELO = "Yellow"
+PALETA_AMBAR = "Amber"
+PALETA_LARANJA = "Orange"
+PALETA_LARANJA_ESCURO = "DeepOrange"
+PALETA_MARROM = "Brown"
+PALETA_CINZA = "Gray"
+PALETA_AZUL_ACINZENTADO = "BlueGray"
+
+
+# ----- TONALIDADES DE COR DA PRIMARY_HUE -----
+
+TOM_1 = "50"
+TOM_2 = "100"
+TOM_3 = "200"
+TOM_4 = "300"
+TOM_5 = "400"
+TOM_6 = "500"
+TOM_7 = "600"
+TOM_8 = "700"
+TOM_9 = "800"
+TOM_10 = "900"
+TOM_DESTAQUE_1 = "A100"
+TOM_DESTAQUE_2 = "A200"
+TOM_DESTAQUE_3 = "A400"
+TOM_DESTAQUE_4 = "A700"
+
+
+# ----- ESTILOS DE TEMA DA THEME_STYLE -----
+
+CLARO = "Light"
+ESCURO = "Dark"
