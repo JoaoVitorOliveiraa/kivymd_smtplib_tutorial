@@ -34,7 +34,7 @@ MDScreen:
             icon_color_focus: (97/255, 74/255, 211/255, 1)
 
         MDTextFieldHintText:
-            text: "Outlined"
+            text: "outlined".capitalize()
             text_color_normal: "yellow"
 
         MDTextFieldHelperText:
