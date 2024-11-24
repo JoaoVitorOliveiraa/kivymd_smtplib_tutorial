@@ -85,7 +85,10 @@ class MyApp(MDApp):
 
                 spacing = "50px",               # Define o espaçamento entre os botões (em pixels, neste caso).
                 orientation = "horizontal"      # Define a orientação dos botões. Opções: "vertical" e "horizontal".
-            )
+            ),
+
+            size_hint_x = 0.3,                  # Define a largura do diálogo (0 a 1).
+            size_hint_y = 0.8                   # Define a altura do diálogo (0 a 1).
         )
 
         # Abre o diálogo com a função "open()".
