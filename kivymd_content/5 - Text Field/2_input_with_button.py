@@ -49,6 +49,10 @@ MDTextField:
 """
 
 class MyApp(MDApp):
+    def __init__(self):
+        super().__init__()
+        self.text_field = None
+
     def build(self):
         "Função que cria o App."
 
