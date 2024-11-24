@@ -71,7 +71,7 @@ class MyApp(MDApp):
             MDDialogButtonContainer(
 
                 # Declaração do primeiro botão, que fecha o diálogo.
-                MDButton(MDButtonText(text = "Cancel", font_style = BODY_TEXT_STYLE),
+                MDButton(MDButtonText(text = "Cancelar", font_style = BODY_TEXT_STYLE),
                          height = 50,
                          width = 100,
 
