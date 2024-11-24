@@ -1,96 +1,90 @@
-from kivy.lang import Builder
-from kivy.uix.widget import Widget
+# Arquivo de exemplo da função MDDialog.
+
 from kivymd.app import MDApp
+from kivy.lang import Builder
+from kivymd.uix.dialog import *
 from kivymd.uix.button import MDButton, MDButtonText
-from kivymd.uix.dialog import (
-    MDDialog,
-    MDDialogIcon,
-    MDDialogHeadlineText,
-    MDDialogSupportingText,
-    MDDialogButtonContainer,
-    MDDialogContentContainer,
-)
-from kivymd.uix.divider import MDDivider
-from kivymd.uix.list import (
-    MDListItem,
-    MDListItemLeadingIcon,
-    MDListItemSupportingText,
-)
+from kivymd_smtplib_tutorial.kivymd_content.config_macros import *
 
-KV = '''
+
+screen_string = '''
 MDScreen:
-    md_bg_color: self.theme_cls.backgroundColor
-
+    md_bg_color: app.theme_cls.backgroundColor
+    
     MDButton:
-        pos_hint: {'center_x': .5, 'center_y': .5}
-        on_release: app.show_alert_dialog()
-
+        width: 30
+        height: 80
+        on_release: app.open_dialog()
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        
         MDButtonText:
-            text: "Show dialog"
+            text: "Abrir Diálogo"
+            font_style: "Title"
 '''
 
 
-class Example(MDApp):
+class MyApp(MDApp):
     def build(self):
-        return Builder.load_string(KV)
+        "Função que cria o App."
 
-    def show_alert_dialog(self):
-        MDDialog(
-            # ----------------------------Icon-----------------------------
+        self.theme_cls.primary_palette = PALETA_ROXO
+        self.theme_cls.theme_style = TEMA_ESCURO
+
+        screen = Builder.load_string(screen_string)
+        return screen
+
+    def open_dialog(self):
+        "Função para abrir o campo Dialog."
+
+        self.dialog = MDDialog(
             MDDialogIcon(
-                icon="refresh",
+                icon = "language-python",
+                icon_color = VERMELHO,
+                halign= "left",
             ),
-            # -----------------------Headline text-------------------------
+
             MDDialogHeadlineText(
-                text="Reset settings?",
-            ),
-            # -----------------------Supporting text-----------------------
+                text = "Descartar Rascunho?",
+                font_style = DISPLAY_TEXT_STYLE,
+                theme_text_color = CUSTOM,
+                text_color = AMARELO,
+                halign = "left"),                   # 'left', 'center', 'right', 'justify' ou 'auto'.
+
             MDDialogSupportingText(
-                text="This will reset your app preferences back to their "
-                "default settings. The following accounts will also "
-                "be signed out:",
-            ),
-            # -----------------------Custom content------------------------
-            MDDialogContentContainer(
-                MDDivider(),
-                MDListItem(
-                    MDListItemLeadingIcon(
-                        icon="gmail",
-                    ),
-                    MDListItemSupportingText(
-                        text="KivyMD-library@yandex.com",
-                    ),
-                    theme_bg_color="Custom",
-                    md_bg_color=self.theme_cls.transparentColor,
-                ),
-                MDListItem(
-                    MDListItemLeadingIcon(
-                        icon="gmail",
-                    ),
-                    MDListItemSupportingText(
-                        text="kivydevelopment@gmail.com",
-                    ),
-                    theme_bg_color="Custom",
-                    md_bg_color=self.theme_cls.transparentColor,
-                ),
-                MDDivider(),
-                orientation="vertical",
-            ),
-            # ---------------------Button container------------------------
+                text = "Isso redefinirá seu dispositivo para as configurações padrão de fábrica.",
+                font_style = HEADLINE_TEXT_STYLE,
+                role = SMALL_TEXT_ROLE,
+                font_size = SIZE_24,
+                theme_text_color = CUSTOM,
+                text_color = VERDE,
+                halign = "center"),
+
             MDDialogButtonContainer(
-                Widget(),
-                MDButton(
-                    MDButtonText(text="Cancel"),
-                    style="text",
-                ),
-                MDButton(
-                    MDButtonText(text="Accept"),
-                    style="text",
-                ),
-                spacing="8dp",
-            ),
-            # -------------------------------------------------------------
-        ).open()
+                MDButton(MDButtonText(text = "Cancel", font_style = BODY_TEXT_STYLE),
+                         height = 50,
+                         width = 100,
+                         on_release = lambda x: self.dialog.dismiss()),
+
+                MDButton(MDButtonText(text = "Sim", font_style = BODY_TEXT_STYLE),
+                         height = 50,
+                         width = 100),
+                spacing = "50px",               # Espaçamento entre os botões.
+                orientation = "horizontal"      # Orientação dos botões. "vertical" ou "horizontal"
+            )
+        )
+        self.dialog.open()
 
 
-Example().run()
+MyApp().run()
+
+
+
+
+
+#             ----- Parâmetros da função MDDialogButtonContainer -----
+
+# ['center', 'center_x', 'center_y', 'children', 'cls', 'disabled', 'height', 'id', 'ids', 'minimum_height',
+# 'minimum_size', 'minimum_width', 'motion_filter', 'opacity', 'orientation', 'padding', 'parent', 'pos',
+# 'pos_hint', 'right', 'size', 'size_hint', 'size_hint_max', 'size_hint_max_x', 'size_hint_max_y',
+# 'size_hint_min', 'size_hint_min_x', 'size_hint_min_y', 'size_hint_x', 'size_hint_y', 'spacing',
+# 'top', 'width', 'x', 'y']
