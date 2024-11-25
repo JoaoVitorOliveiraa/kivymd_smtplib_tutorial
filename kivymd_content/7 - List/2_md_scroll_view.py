@@ -8,12 +8,18 @@ from kivymd_smtplib_tutorial.kivymd_content.config_macros import *
 
 
 # String da implementação da função MDScrollView.
-scroll_view_string = '''
-MDScrollView:
-    do_scroll_x: False
-    md_bg_color: (1, 0, 0, 0.2)
-    size_hint_x: 0.5
-    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+screen_string = '''
+MDScreen:
+    md_bg_color: self.theme_cls.backgroundColor
+    
+    MDScrollView:
+        do_scroll_x: False
+        md_bg_color: (1, 0, 0, 0.2)
+        size_hint_x: 0.5
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        
+        MDList:
+            id: list_container
 '''
 
 class MyApp(MDApp):
@@ -22,22 +28,14 @@ class MyApp(MDApp):
 
         self.theme_cls.primary_palette = PALETA_AZUL
         self.theme_cls.theme_style = TEMA_CLARO
-        screen = MDScreen(md_bg_color = self.theme_cls.backgroundColor)
 
-        # Criação do contêiner da barra de rolar.
-        scroll_view = Builder.load_string(scroll_view_string)
+        screen = Builder.load_string(screen_string)
 
         # Crição de uma lista e adição de 40 itens nela.
-        list_itens = MDList()
         for i in range(40):
             item = MDListItem(MDListItemHeadlineText(text = "Utilização da função MDScrollView"))
-            list_itens.add_widget(item)
+            screen.ids.list_container.add_widget(item)
 
-        # Adição da lista no contêiner da barra.
-        scroll_view.add_widget(list_itens)
-
-        # Adição do contêiner da barra na tela.
-        screen.add_widget(scroll_view)
         return screen
 
 
@@ -45,7 +43,7 @@ MyApp().run()
 
 
 
-#                                           ----- Descrição -----
+#                              ----- Descrição da função MDScrollView -----
 
 # MDScrollView
 # Descrição: Um widget de rolagem da biblioteca KivyMD que permite visualizar conteúdo que
@@ -76,3 +74,32 @@ MyApp().run()
 # Valores detalhados:
 # center_x: 0.5: Centraliza horizontalmente (50% da largura do pai).
 # center_y: 0.5: Centraliza verticalmente (50% da altura do pai).
+
+
+#                  ----- Descrição da expressão "screen.ids.list_container.add_widget(item)" -----
+
+# id:
+# Em Kivy (e KivyMD), id é uma identificação única atribuída a widgets em arquivos ou strings KV.
+# Ele permite que você referencie widgets no código Python sem precisar de variáveis explícitas.
+# Declarar um id associa um nome único ao widget dentro da hierarquia da interface.
+# Aqui, o widget MDList recebe o identificador list_container, que pode ser usado para manipular o widget diretamente no Python.
+
+# .ids:
+# ".ids" é um dicionário especial que armazena todos os widgets associados a id no escopo do widget pai.
+# Ele mapeia os nomes dos id para os objetos correspondentes.
+# Você pode usar ".ids" para acessar qualquer widget definido com um id no KV.
+# No Python, você pode acessar list_container (o MDList) usando self.root.ids.list_container
+
+# Resumo:
+
+# screen:
+# É o widget MDScreen, carregado com o KV.
+
+# screen.ids:
+# É o dicionário que armazena todos os widgets que possuem um id no escopo do MDScreen.
+
+# screen.ids.list_container:
+# Acessa o widget MDList, permitindo que o código Python adicione itens a ele.
+
+# Manipulação:
+# Com screen.ids.list_container.add_widget(item), você adiciona dinamicamente widgets (neste caso, MDListItem) ao MDList.
