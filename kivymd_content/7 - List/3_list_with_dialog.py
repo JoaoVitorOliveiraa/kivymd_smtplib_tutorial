@@ -3,6 +3,7 @@
 
 from kivymd.app import MDApp
 from kivy.lang import Builder
+from kivymd.uix.list import MDList
 from kivymd.uix.dialog import *
 from kivymd.uix.button import MDButton, MDButtonText
 from kivymd_smtplib_tutorial.kivymd_content.config_macros import *
@@ -82,7 +83,7 @@ class MyApp(MDApp):
         super().__init__()
         self.dialog = None
         self.text_field = None
-        self.list_items = None
+        self.list_dialog = None
 
     def build(self):
         "Função que cria o App."
@@ -90,7 +91,6 @@ class MyApp(MDApp):
         self.theme_cls.primary_palette = PALETA_AMARELO
         self.theme_cls.theme_style = TEMA_CLARO
 
-        self.list_items = Builder.load_string(list_string)
         self.text_field = Builder.load_string(textfield_string)
         screen = Builder.load_string(screen_string)
         screen.add_widget(self.text_field)
@@ -115,8 +115,6 @@ class MyApp(MDApp):
 
             MDDialogSupportingText(text = check_username, font_style = TITLE_TEXT_STYLE, halign = "center"),
 
-            MDDialogContentContainer(orientation="vertical"),
-
             MDDialogButtonContainer(
 
                 MDButton(MDButtonText(text = "Fechar", font_style = BODY_TEXT_STYLE),
@@ -133,12 +131,39 @@ class MyApp(MDApp):
         second_button = MDButton(MDButtonText(text="Sim", font_style=BODY_TEXT_STYLE),
                                  height=50,
                                  width=100,
-                                 on_release=None)
+                                 on_release = self.open_list_dialog)
 
         if secondary_button:
             self.dialog.add_widget(MDDialogButtonContainer(second_button))
 
         self.dialog.open()
+
+
+    def open_list_dialog(self, *args):
+        "Função que abre o diálogo com lista."
+
+        list_items = Builder.load_string(list_string)
+
+        self.list_dialog = MDDialog(
+            MDDialogHeadlineText(text="Login", font_style=HEADLINE_TEXT_STYLE, halign="left"),
+
+            MDDialogSupportingText(text = f"Escolha uma conta, {self.text_field.text}", font_style=TITLE_TEXT_STYLE, halign="center"),
+
+            MDDialogContentContainer(list_items, orientation="vertical"),
+
+            MDDialogButtonContainer(
+
+                MDButton(MDButtonText(text="Fechar", font_style=BODY_TEXT_STYLE),
+                         height=50,
+                         width=100,
+                         on_release=lambda x: (self.list_dialog.dismiss(), self.dialog.dismiss())),
+
+                spacing="50px"),
+
+            size_hint_x=0.4,
+            size_hint_y=0.6
+        )
+        self.list_dialog.open()
 
 
 MyApp().run()
