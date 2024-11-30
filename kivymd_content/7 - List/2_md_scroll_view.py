@@ -2,8 +2,7 @@
 
 from kivymd.app import MDApp
 from kivy.lang import Builder
-from kivymd.uix.screen import MDScreen
-from kivymd.uix.list import MDList, MDListItem, MDListItemHeadlineText
+from kivymd.uix.list import MDListItem, MDListItemHeadlineText
 from kivymd_smtplib_tutorial.kivymd_content.config_macros import *
 
 
