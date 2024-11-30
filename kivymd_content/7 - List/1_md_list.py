@@ -13,6 +13,8 @@ MDScreen:
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         
         MDListItem:
+            on_release: print("Primeiro Item da Lista")
+
             MDListItemHeadlineText:
                 text: "Utilização da MDListItem com tamanho one-line e ícone na esquerda"
                 font_style: "Label"
@@ -29,6 +31,8 @@ MDScreen:
         
         
         MDListItem:
+            on_release: print("Segundo Item da Lista")
+            
             MDListItemHeadlineText:
                 text: "Utilização da MDListItem com tamanho one-line e ícone na direita"
                 font_style: "Label"
@@ -40,6 +44,8 @@ MDScreen:
         
         
         MDListItem:
+            on_release: print("Terceiro Item da Lista")
+        
             MDListItemHeadlineText:
                 text: "Utilização da MDListItem com tamanho one-line e checkbox na direita"
                 font_style: "Label"
