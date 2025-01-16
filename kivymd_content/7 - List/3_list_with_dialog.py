@@ -57,6 +57,8 @@ MDList:
     md_bg_color: app.theme_cls.transparentColor
     
     MDListItem:
+        on_release: print("Email 1")
+        
         MDListItemSupportingText:
             text: "user01@gmail.com"
             font_style: "Label"
@@ -67,6 +69,8 @@ MDList:
             radius: "36dp"
             
     MDListItem:
+        on_release: print("Email 2")
+    
         MDListItemSupportingText:
             text: "user02@gmail.com"
             font_style: "Label"
