@@ -35,8 +35,7 @@ screen_string = '''
             bold: True
 
 MDScreen:
-    theme_bg_color: "Custom"
-    md_bg_color: self.theme_cls.backgroundColor
+    md_bg_color: app.theme_cls.backgroundColor
 
     MDBoxLayout:
         id: box
