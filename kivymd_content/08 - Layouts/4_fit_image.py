@@ -17,7 +17,7 @@ MDScreen:
         radius: (20, 20, 20, 20)
 
         FitImage:
-            source: "../7 - List/Mel.jpg"
+            source: "../07 - List/Mel.jpg"
             size_hint_y: 0.8
             radius: (36, 36, 36, 36)
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
