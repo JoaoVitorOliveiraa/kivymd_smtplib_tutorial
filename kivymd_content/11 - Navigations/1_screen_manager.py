@@ -1,4 +1,4 @@
-# Arquivo de exemplo da função MDTopAppBar.
+# Arquivo de exemplo da função MDScreenManager.
 
 from kivymd.app import MDApp
 from kivy.lang import Builder
