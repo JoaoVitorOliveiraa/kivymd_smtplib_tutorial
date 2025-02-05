@@ -276,3 +276,46 @@ MyApp().run()
 
 # Parâmetros importantes:
 # Não tem parâmetros próprios além de herdar os parâmetros de layout.
+
+
+#                               ----- Descrição do trecho "on_release: nav_drawer.set_state("toggle")" -----
+
+# A linha on_release: nav_drawer.set_state("toggle") faz parte da interação com o MDNavigationDrawer no código fornecido,
+# e é usada para alternar (abrir ou fechar) o drawer (menu lateral) quando o botão é pressionado.
+
+# O que é on_release?
+# on_release é um evento de interação do Kivy, que é disparado quando o usuário solta o botão (após pressioná-lo).
+# Esse evento é comumente usado em botões para definir ações a serem realizadas quando o usuário clica no botão e o solta.
+
+# O que é nav_drawer?
+# nav_drawer é o identificador da instância do componente MDNavigationDrawer. Esse componente é responsável pelo menu lateral que pode ser aberto ou fechado.
+# O MDNavigationDrawer geralmente contém um menu de navegação, que pode ser mostrado ou ocultado com base na interação do usuário, como deslizar ou clicar em um botão.
+
+# O que é set_state("toggle")?
+# set_state("toggle") é um metodo usado para alternar o estado do MDNavigationDrawer.
+# "toggle" é um estado especial que alterna entre abrir e fechar o drawer.
+# Quando você chama nav_drawer.set_state("toggle"), o KivyMD verifica o estado atual do drawer:
+# Se ele estiver fechado, o metodo abre o drawer.
+# Se ele estiver aberto, o metodo fecha o drawer.
+
+# Exemplo do Fluxo:
+# Vamos detalhar o fluxo de interação com o on_release: nav_drawer.set_state("toggle") no código:
+# O botão (onde a linha on_release: nav_drawer.set_state("toggle") está configurada) é exibido na tela.
+# Esse botão é um MDButton posicionado no centro da tela, com o texto "Open Drawer".
+# Quando o usuário pressiona e solta o botão:
+# O evento on_release é disparado.
+# O nav_drawer.set_state("toggle") é chamado.
+# O que acontece internamente com o MDNavigationDrawer?
+# Se o drawer (menu lateral) estiver fechado, ele será aberto.
+# Se o drawer estiver aberto, ele será fechado.
+
+# Por que usar toggle?
+# O estado "toggle" é útil porque ele automaticamente lida com a alternância do estado do drawer sem precisar
+# saber se ele está aberto ou fechado previamente. Com apenas uma linha de código, o drawer alterna entre os
+# dois estados (aberto/fechado), tornando o código mais simples e conciso.
+
+# Conclusão:
+# A linha on_release: nav_drawer.set_state("toggle") faz com que o MDNavigationDrawer (menu lateral) seja aberto
+# ou fechado quando o botão é pressionado. Usando o estado "toggle", o MDNavigationDrawer alterna automaticamente
+# entre aberto e fechado sem a necessidade de verificar o estado atual manualmente. Esse é um comportamento comum
+# em interfaces de usuário, onde o menu lateral pode ser acessado e ocultado com um simples toque no botão.
