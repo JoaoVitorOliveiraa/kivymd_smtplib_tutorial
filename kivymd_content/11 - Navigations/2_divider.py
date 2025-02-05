@@ -2,8 +2,6 @@
 
 from kivymd.app import MDApp
 from kivy.lang import Builder
-from kivymd.uix.divider import MDDivider
-from kivy.properties import StringProperty
 
 # screen_string = '''
 # MDScreen:
