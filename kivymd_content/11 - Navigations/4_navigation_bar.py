@@ -135,6 +135,8 @@ MDBoxLayout:
         MDNavigationItem:
             id: item1
             name: "Screen 1"
+            indicator_color: (1, 1, 0, 1)
+            indicator_duration: 0.5
             
             MDNavigationItemIcon:
                 icon: "gmail"
@@ -145,6 +147,8 @@ MDBoxLayout:
         MDNavigationItem:
             id: item2
             name: "Screen 2"
+            indicator_color: (1, 1, 0, 1)
+            indicator_duration: 0.5
             
             MDNavigationItemIcon:
                 icon: "twitter"
@@ -155,6 +159,8 @@ MDBoxLayout:
         MDNavigationItem:
             id: item3
             name: "Screen 3"
+            indicator_color: (1, 1, 0, 1)
+            indicator_duration: 0.5
         
             MDNavigationItemIcon:
                 icon: "linkedin"
