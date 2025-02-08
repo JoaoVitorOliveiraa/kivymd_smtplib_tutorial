@@ -177,3 +177,19 @@ class MyApp(MDApp):
         self.root.ids.screen_manager.current = screen_name  # Define a tela ativa
 
 MyApp().run()
+
+
+# Barra de navegação (MDNavigationBar)
+# MDNavigationBar: adiciona uma barra de navegação na parte inferior.
+# on_switch_tabs: app.on_switch_tabs(*args)
+# Isso define uma ação para quando um botão for pressionado.
+# app.on_switch_tabs(*args) chama a função on_switch_tabs da classe MyApp.
+# O *args permite que todos os argumentos necessários sejam passados corretamente.
+
+# Função on_switch_tabs
+# Essa função troca de tela quando um botão da MDNavigationBar é pressionado.
+# instance_navigation_bar → Representa a MDNavigationBar.
+# instance_item → Representa o botão pressionado (MDNavigationItem).
+# instance_item.name → Obtém o nome da tela associada ao botão.
+# self.root.ids.screen_manager.current = screen_name → Define a tela ativa no MDScreenManager.
+# O *args permite que todos os argumentos necessários sejam passados corretamente.
