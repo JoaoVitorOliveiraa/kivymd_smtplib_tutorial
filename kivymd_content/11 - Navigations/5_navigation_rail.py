@@ -65,6 +65,48 @@ class MyApp(MDApp):
 
 MyApp().run()
 
+
+
+#                               ----- Descrição das funções -----
+
+# MDNavigationRail
+# A MDNavigationRail é um componente de navegação lateral que permite alternar entre diferentes telas ou seções do aplicativo.
+# Ela é ideal para aplicativos com poucas opções de navegação e oferece um design compacto.
+# Principais Parâmetros
+# type:	#Define se a navegação exibe rótulos. Valores possíveis: "selected" (default), "unselected" e "labeled".
+# anchor: Define o alinhamento da barra. Valores possíveis: "top", "bottom" e "center" (default).
+# radius: Define o arredondamento das bordas da barra de navegação.
+
+# MDNavigationRailMenuButton
+# O MDNavigationRailMenuButton é um botão localizado no topo da barra de navegação lateral.
+# Ele pode ser usado para abrir menus laterais ou ativar outras funções do aplicativo.
+# Podem ser utilizados os mesmos parâmetros da função MDIconButton.
+
+# MDNavigationRailFabButton
+# O MDNavigationRailFabButton é um botão flutuante que pode ser usado para ações principais, como voltar à tela inicial.
+# Podem ser utilizados os mesmos parâmetros da função MDFabButton.
+
+# MDNavigationRailItem
+# O MDNavigationRailItem representa um item dentro da barra de navegação. Ele pode conter um ícone e um texto.
+
+# MDNavigationRailItemIcon
+# O MDNavigationRailItemIcon é o componente que exibe o ícone dentro de um MDNavigationRailItem.
+# Podem ser utilizados os mesmos parâmetros da função MDIcon.
+
+# MDNavigationRailItemLabel
+# O MDNavigationRailItemLabel exibe o texto associado a um MDNavigationRailItem.
+# Podem ser utilizados os mesmos parâmetros da função MDLabel.
+
+# Resumo Final
+# MDNavigationRail              Barra lateral de navegação.
+# MDNavigationRailMenuButton	Botão no topo da barra para abrir menus.
+# MDNavigationRailFabButton	    Botão flutuante para ações principais.
+# MDNavigationRailItem	        Item dentro da barra lateral (ícone + texto).
+# MDNavigationRailItemIcon	    Ícone de um item de navegação.
+# MDNavigationRailItemLabel	    Texto de um item de navegação.
+
+
+
 #                               ----- Exemplo de código que não utiliza orientação a objetos -----
 
 # screen_string = '''
