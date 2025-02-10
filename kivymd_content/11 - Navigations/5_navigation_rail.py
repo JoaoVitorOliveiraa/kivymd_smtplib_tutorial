@@ -9,7 +9,10 @@ from kivymd.uix.navigationrail import MDNavigationRailItem
 screen_string = '''
 # Componente personalizado que combina um ícone e um texto.
 <CommonNavigationRailItem>
-
+    on_active: print(root.text)
+    on_enter: print(root.text)
+    on_leave: print(root.text)
+    
     # Define o ícone do item.
     MDNavigationRailItemIcon:
         icon: root.icon
@@ -31,10 +34,12 @@ MDScreen:
         # Ícone de menu. Podem ser utilizados os mesmos parâmetros da função MDIconButton.
         MDNavigationRailMenuButton:
             icon: "menu"
+            on_release: print("Botão de Menu")
 
         # Botão flutuante central. Podem ser utilizados os mesmos parâmetros da função MDFabButton.
         MDNavigationRailFabButton:
             icon: "home"
+            on_release: print("Botão de Home")
 
         CommonNavigationRailItem:
             icon: "folder-outline"
@@ -88,6 +93,13 @@ MyApp().run()
 
 # MDNavigationRailItem
 # O MDNavigationRailItem representa um item dentro da barra de navegação. Ele pode conter um ícone e um texto.
+# Principais Parâmetros
+# active: Este parâmetro indica se o item está ativo ou não. Valores: True ou False
+# radius: Define o raio das bordas arredondadas do item.
+# on_active: Este evento é disparado quando o valor de active muda.
+# on_enter: Disparado quando o mouse entra na área do item.
+# on_leave: Disparado quando o mouse sai da área do item.
+# add_widget: Adiciona um widget filho dentro do MDNavigationRailItem.
 
 # MDNavigationRailItemIcon
 # O MDNavigationRailItemIcon é o componente que exibe o ícone dentro de um MDNavigationRailItem.
